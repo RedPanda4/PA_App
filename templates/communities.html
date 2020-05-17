@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Comunities{% endblock %}
+{% block content %}
+    <div class="col-10 col-lg-offset-2">
+        <form method="post" onSubmit="return confirm('Are you sure you wish to delete?');">
+            <table class="table ">
+                {% for community in communities %}
+                    <tr>
+                        <th>{{ community.name }}</th>
+                        <th style="background-color:{{ community.color }}; width: 10px"></th>
+                        <th>{{ community.color }}</th>
+                        <th>
+                            {% if community.deletable %}
+                            <button name="delete" value="{{ community.name }}"
+                                    class="glyphicon glyphicon-remove-circle"></button>
+                            {% endif %}
+                        </th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+
+    <br>
+    <div class="col-10 col-lg-offset-2">
+        <form method="post" class="form-group">
+            <label>
+                Name:
+                <input type="text" name="name">
+            </label>
+            <br>
+            <label>
+                Color:
+                <input type="color" name="color">
+            </label>
+            <br>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+{% endblock %}

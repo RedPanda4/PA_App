@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - PA</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">PA-HomePage</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/communities">Comunities</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/players">Players</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/meetings">Meetings</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="content">{% block content %}{% endblock %}
+</div>
+</body>
+</html>

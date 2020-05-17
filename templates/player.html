@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}Player{% endblock %}
+{% block content %}
+    <div class="col-10 col-lg-offset-2">
+        <form method="post" onSubmit="return confirm('Are you sure you wish to delete?');">
+            <table class="table ">
+                {% for player in players %}
+                    <tr>
+                        <th>{{ player.name }}</th>
+                        <th>{{ player.community.name }}</th>
+                        <th>
+                            <button name="delete"  value="{{ player.name }}" class="glyphicon glyphicon-remove-circle"></button>
+                        </th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+    <br>
+    <div class="col-10 col-lg-offset-2">
+    {% if communities %}
+    <form method="post" class="form-group">
+        <label>
+            Member name:
+            <input type="text" name="name">
+        </label>
+        <br>
+        <label>
+            Community:
+            <select name="community">
+                {% for community in communities %}
+                    <option value="{{ community.id }}"> {{ community.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <br>
+        <input type="submit" value="Add">
+    </form>
+    {% endif %}
+    </div>
+{% endblock %}
