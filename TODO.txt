@@ -1,0 +1,6 @@
+TODO
+
+.Make communities table show members?
+.Show players in order of Communitie
+.Connect to mojang.api and insteed of adding any name adds uuid, and keeps name update
+.Seperate Tables to a diferent block, and make them more abstract

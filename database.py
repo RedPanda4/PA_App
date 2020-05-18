@@ -26,6 +26,7 @@ class Meeting(BaseModel):
 
 class Vote(BaseModel):
 	number = IntegerField(unique=True)
+	description = TextField()
 	meeting = ForeignKeyField(Meeting, on_delete='RESTRICT')
 
 
