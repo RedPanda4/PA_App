@@ -3,12 +3,15 @@
 {% block content %}
     <div class="col-6 col-lg-offset-3">
         <form method="post" onSubmit="return confirm('Are you sure you wish to delete?');">
-            <table class="table ">
+            <table class="table js-sort-table">
+                <thead>
                 <tr>
-                    <th class="col-3">Name</th>
+                    <th class="col-3 js-sort-string">Name</th>
                     <th class="col-2" colspan="2">Color</th>
                     <th class="col-1">Delete</th>
                 </tr>
+                </thead>
+                <tbody>
                 {% for community in communities %}
                     <tr>
                         <td class="col-3">{{ community.name }}</td>
@@ -22,6 +25,7 @@
                         </td>
                     </tr>
                 {% endfor %}
+                </tbody>
             </table>
         </form>
     </div>

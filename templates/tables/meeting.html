@@ -3,18 +3,22 @@
 {% block content %}
     <div class="col-6 col-lg-offset-3">
         <form method="post" onSubmit="return confirm('Are you sure you wish to delete?');">
-            <table class="table ">
+            <table class="table js-sort-table">
+                <thead>
                 <tr>
-                    <th class="col-1">ID</th>
-                    <th class="col-2">Date</th>
+                    <th class="col-1  js-sort-number js-sort-0">ID</th>
+                    <th class="col-2 js-sort-date">Date</th>
                     <th class="col-1">Delete</th>
                 </tr>
+                </thead>
+                <tbody>
                 {% for meeting in meetings %}
-                    <tr class="rounded-pill border" onclick="document.location='/meetings/{{ meeting.id }}'" >
-                            <td class="col-3">{{ meeting.id }}</td>
-                            <td class="col-1">{{ meeting.date|date }}</td>
+                    <tr class="rounded-pill border" onclick="document.location='/meetings/{{ meeting.id }}'">
+                        <td class="col-3">{{ meeting.id }}</td>
+                        <td class="col-1">{{ meeting.date|date }}</td>
                     </tr>
                 {% endfor %}
+                </tbody>
             </table>
         </form>
     </div>

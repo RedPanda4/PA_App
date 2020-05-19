@@ -3,22 +3,26 @@
 {% block content %}
     <div class="col-6 col-lg-offset-3">
         <form method="post" onSubmit="return confirm('Are you sure you wish to delete?');">
-            <table class="table ">
+            <table class="table js-sort-table">
+                <thead>
                 <tr>
-                    <th class="col-3">Name</th>
-                    <th class="col-2">Community</th>
+                    <th class="col-3 js-sort-string">Name</th>
+                    <th class="col-2 js-sort-string">Community</th>
                     <th class="col-1">Delete</th>
                 </tr>
+                </thead>
+                <tbody>
                 {% for player in players %}
                     <tr>
-                        <td >{{ player.name }}</td>
-                        <td >{{ player.community.name }}</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{ player.community.name }}</td>
                         <td>
                             <button name="delete" value="{{ player.name }}"
                                     class="glyphicon glyphicon-remove-circle"></button>
                         </td>
                     </tr>
                 {% endfor %}
+                </tbody>
             </table>
         </form>
     </div>
