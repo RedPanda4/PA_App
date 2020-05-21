@@ -8,6 +8,7 @@
  *  or http://opensource.org/licenses/MIT
  *
  * latest version available at https://github.com/tyleruebele/sort-table
+ * site with info https://www.cssscript.com/html-table-sortable/
  */
 
 /**
